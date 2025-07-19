@@ -78,7 +78,7 @@ export class Gameboard {
     return fill;
   }
 
-  recieveAttack(xCoord, yCoord) {
+  receiveAttack(xCoord, yCoord) {
     let target = xCoord.concat(yCoord);
     this.attackedCells.push(target);
     // maybe implement a missed attacks array
