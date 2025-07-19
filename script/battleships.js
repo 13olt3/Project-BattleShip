@@ -1,9 +1,12 @@
+import { charShift } from "./caesarCipher";
+
 export class ships {
   constructor(length) {
     this.length = length;
     this.hits = 0;
     this.sunk = false;
-    this.position = undefined;
+    this.xPos = undefined;
+    this.yPos = undefined;
     this.direction = undefined;
   }
 
@@ -27,63 +30,66 @@ export class Gameboard {
   constructor() {
     this.board = [];
     this.occupiedCells = [];
+    this.attackedCells = [];
   }
   placeShip(xCoord, yCoord, direction, size = 4) {
-    // board object with x,y co-ordinates range (0-10) and ship object from input placeShip() makes a NEW ship and places it onto the board
+    // board object with x,y co-ordinates range (a-j)x(0-10)y and ship object from input placeShip() makes a NEW ship and places it onto the board
     let newShip = new ships(size);
-    // ship won't be able to be placed outside of (0,0) and (10,10)
-    newShip.position = [xCoord, yCoord];
+
+    newShip.xPos = xCoord;
+    newShip.yPos = yCoord;
     newShip.direction = direction;
     this.board.push(newShip);
-    this.#fillCells(newShip);
+    let filledCells = this.#fillCells(newShip);
+    for (let i = 0; i < filledCells.length; ++i) {
+      this.occupiedCells.push(filledCells[i]);
+    }
 
     return newShip.position;
   }
 
   #fillCells(shipObject) {
-    let fill = [];
-    if (shipObject.direction === "up") {
-      for (let i = 0; i < shipObject.length; ++i) {
-        let tile = [];
-        tile.push(shipObject.position[0]);
-        //y-coord in the up direction
-        tile.push(shipObject.position[1] - i);
-        fill.push(tile);
-      }
-    }
-    if (shipObject.direction === "right") {
-      for (let i = 0; i < shipObject.length; ++i) {
-        let tile = [];
-        //x-coord in the right direction
-        tile.push(shipObject.position[0] + i);
-        tile.push(shipObject.position[1]);
-        fill.push(tile);
-      }
-    }
-    if (shipObject.direction === "down") {
-      for (let i = 0; i < shipObject.length; ++i) {
-        let tile = [];
-
-        tile.push(shipObject.position[0]);
-        //y-coord in the down direction
-        tile.push(shipObject.position[1] + i);
-        fill.push(tile);
-      }
-    }
-    if (shipObject.direction === "left") {
-      for (let i = 0; i < shipObject.length; ++i) {
-        let tile = [];
-        //x-coord in the left direction
-        tile.push(shipObject.position[0] - i);
-        tile.push(shipObject.position[1]);
-        fill.push(tile);
-      }
-    }
-
-    for (let i = 0; i < fill.length; ++i) {
-      this.occupiedCells.push(fill[i]);
-    }
-
     //takes start position and ship direction and ship length and makes those cells occupied
+    let fill = [];
+    if (shipObject.direction == "up") {
+      // minus yCoord indicates up
+      for (let i = 0; i < shipObject.length; ++i) {
+        fill.push(shipObject.xPos.concat(shipObject.yPos - i));
+      }
+    }
+    if (shipObject.direction == "right") {
+      // plus charShift (caesarCipher) indicates right
+      for (let i = 0; i < shipObject.length; ++i) {
+        fill.push(charShift(shipObject.xPos, i).concat(shipObject.yPos));
+      }
+    }
+    if (shipObject.direction == "down") {
+      // plus yCoord indicates down
+      for (let i = 0; i < shipObject.length; ++i) {
+        fill.push(shipObject.xPos.concat(shipObject.yPos + i));
+      }
+    }
+    if (shipObject.direction == "left") {
+      // minus charShift (caesarCipher) indicates left
+      for (let i = 0; i < shipObject.length; ++i) {
+        fill.push(charShift(shipObject.xPos, -i).concat(shipObject.yPos));
+      }
+    }
+    return fill;
+  }
+
+  recieveAttack(xCoord, yCoord) {
+    let target = xCoord.concat(yCoord);
+    this.attackedCells.push(target);
+    // maybe implement a missed attacks array
+    let hit = false;
+    for (let i = 0; i < this.board.length; ++i) {
+      let filledCells = this.#fillCells(this.board[i]);
+      if (filledCells.includes(target)) {
+        hit = true;
+        this.board[i].hit();
+      }
+    }
+    return hit;
   }
 }
