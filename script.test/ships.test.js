@@ -42,13 +42,13 @@ test("board fill 3", () => {
   expect(game.occupiedCells).toContain("e7");
 });
 
-test("recieve attack miss", () => {
+test("receive attack miss", () => {
   let game = new Gameboard();
   game.placeShip("e", 5, "up");
   expect(game.receiveAttack("c", 3)).toBe(false);
 });
 
-test("recieve attack hit", () => {
+test("receive attack hit", () => {
   let game = new Gameboard();
   game.placeShip("e", 5, "up");
   expect(game.receiveAttack("e", 5)).toBe(true);
