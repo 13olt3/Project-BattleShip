@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #d6d0d0;
+}
+.frame {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #a5a0a0;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 7px;
+}
+
+.playScreen {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.base,
+.attack {
+  display: grid;
+  grid-template-rows: repeat(11, 1fr);
+  row-gap: 3px;
+}
+
+.base > div,
+.attack > div,
+.base > span,
+.attack > span {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  height: 1rem;
+  column-gap: 1px;
+}
+
+.base > div > div,
+.attack > div > div {
+  border: solid 2px black;
+}
+
+.menu {
+  margin-top: 35px;
+  text-align: center;
+}
+.menu > div {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border: 2px black solid;
+}

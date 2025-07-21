@@ -92,4 +92,41 @@ export class Gameboard {
     }
     return hit;
   }
+
+  reportAllSunk() {
+    for (let i = 0; i < this.board.length; ++i) {
+      if (this.board[i].isSunk() === false) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
+
+export class Player {
+  constructor() {
+    this.player;
+    this.board = new Gameboard();
+  }
+
+  renderBoardOne() {
+    for (let i = 0; i < this.board.occupiedCells.length; ++i) {
+      this.#changePlayerOneBoard(this.board.occupiedCells[i]);
+    }
+  }
+  #changePlayerOneBoard(cell) {
+    let selector = `[p-one-base] > div > [${cell}]`;
+    const selectedCell = document.querySelector(selector);
+    selectedCell.style.backgroundColor = "green";
+  }
+  renderBoardTwo() {
+    for (let i = 0; i < this.board.occupiedCells.length; ++i) {
+      this.#changePlayerTwoBoard(this.board.occupiedCells[i]);
+    }
+  }
+  #changePlayerTwoBoard(cell) {
+    let selector = `[p-two-base] > div > [${cell}]`;
+    const selectedCell = document.querySelector(selector);
+    selectedCell.style.backgroundColor = "green";
+  }
 }

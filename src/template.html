@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleships</title>
+  </head>
+  <body>
+    <div class="frame playerOne" board-frame>
+      <div class="playScreen" player-base>
+        <div class="attack">
+          <span top>
+            <div></div>
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+            <div>E</div>
+            <div>F</div>
+            <div>G</div>
+            <div>H</div>
+            <div>I</div>
+            <div>J</div>
+          </span>
+          <div row-one>
+            <span>1</span>
+            <div a1></div>
+            <div b1></div>
+            <div c1></div>
+            <div d1></div>
+            <div e1></div>
+            <div f1></div>
+            <div g1></div>
+            <div h1></div>
+            <div i1></div>
+            <div j1></div>
+          </div>
+          <div row-two>
+            <span>2</span>
+            <div a2></div>
+            <div b2></div>
+            <div c2></div>
+            <div d2></div>
+            <div e2></div>
+            <div f2></div>
+            <div g2></div>
+            <div h2></div>
+            <div i2></div>
+            <div j2></div>
+          </div>
+          <div row-three>
+            <span>3</span>
+            <div a3></div>
+            <div b3></div>
+            <div c3></div>
+            <div d3></div>
+            <div e3></div>
+            <div f3></div>
+            <div g3></div>
+            <div h3></div>
+            <div i3></div>
+            <div j3></div>
+          </div>
+          <div row-four>
+            <span>4</span>
+            <div a4></div>
+            <div b4></div>
+            <div c4></div>
+            <div d4></div>
+            <div e4></div>
+            <div f4></div>
+            <div g4></div>
+            <div h4></div>
+            <div i4></div>
+            <div j4></div>
+          </div>
+          <div row-five>
+            <span>5</span>
+            <div a5></div>
+            <div b5></div>
+            <div c5></div>
+            <div d5></div>
+            <div e5></div>
+            <div f5></div>
+            <div g5></div>
+            <div h5></div>
+            <div i5></div>
+            <div j5></div>
+          </div>
+          <div row-six>
+            <span>6</span>
+            <div a6></div>
+            <div b6></div>
+            <div c6></div>
+            <div d6></div>
+            <div e6></div>
+            <div f6></div>
+            <div g6></div>
+            <div h6></div>
+            <div i6></div>
+            <div j6></div>
+          </div>
+          <div row-seven>
+            <span>7</span>
+            <div a7></div>
+            <div b7></div>
+            <div c7></div>
+            <div d7></div>
+            <div e7></div>
+            <div f7></div>
+            <div g7></div>
+            <div h7></div>
+            <div i7></div>
+            <div j7></div>
+          </div>
+          <div row-eight>
+            <span>8</span>
+            <div a8></div>
+            <div b8></div>
+            <div c8></div>
+            <div d8></div>
+            <div e8></div>
+            <div f8></div>
+            <div g8></div>
+            <div h8></div>
+            <div i8></div>
+            <div j8></div>
+          </div>
+          <div row-nine>
+            <span>9</span>
+            <div a9></div>
+            <div b9></div>
+            <div c9></div>
+            <div d9></div>
+            <div e9></div>
+            <div f9></div>
+            <div g9></div>
+            <div h9></div>
+            <div i9></div>
+            <div j9></div>
+          </div>
+          <div row-ten>
+            <span>10</span>
+            <div a10></div>
+            <div b10></div>
+            <div c10></div>
+            <div d10></div>
+            <div e10></div>
+            <div f10></div>
+            <div g10></div>
+            <div h10></div>
+            <div i10></div>
+            <div j10></div>
+          </div>
+        </div>
+        <div class="base" p-one-base>
+          <span top>
+            <div></div>
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+            <div>E</div>
+            <div>F</div>
+            <div>G</div>
+            <div>H</div>
+            <div>I</div>
+            <div>J</div>
+          </span>
+          <div row-one>
+            <span>1</span>
+            <div a1></div>
+            <div b1></div>
+            <div c1></div>
+            <div d1></div>
+            <div e1></div>
+            <div f1></div>
+            <div g1></div>
+            <div h1></div>
+            <div i1></div>
+            <div j1></div>
+          </div>
+          <div row-two>
+            <span>2</span>
+            <div a2></div>
+            <div b2></div>
+            <div c2></div>
+            <div d2></div>
+            <div e2></div>
+            <div f2></div>
+            <div g2></div>
+            <div h2></div>
+            <div i2></div>
+            <div j2></div>
+          </div>
+          <div row-three>
+            <span>3</span>
+            <div a3></div>
+            <div b3></div>
+            <div c3></div>
+            <div d3></div>
+            <div e3></div>
+            <div f3></div>
+            <div g3></div>
+            <div h3></div>
+            <div i3></div>
+            <div j3></div>
+          </div>
+          <div row-four>
+            <span>4</span>
+            <div a4></div>
+            <div b4></div>
+            <div c4></div>
+            <div d4></div>
+            <div e4></div>
+            <div f4></div>
+            <div g4></div>
+            <div h4></div>
+            <div i4></div>
+            <div j4></div>
+          </div>
+          <div row-five>
+            <span>5</span>
+            <div a5></div>
+            <div b5></div>
+            <div c5></div>
+            <div d5></div>
+            <div e5></div>
+            <div f5></div>
+            <div g5></div>
+            <div h5></div>
+            <div i5></div>
+            <div j5></div>
+          </div>
+          <div row-six>
+            <span>6</span>
+            <div a6></div>
+            <div b6></div>
+            <div c6></div>
+            <div d6></div>
+            <div e6></div>
+            <div f6></div>
+            <div g6></div>
+            <div h6></div>
+            <div i6></div>
+            <div j6></div>
+          </div>
+          <div row-seven>
+            <span>7</span>
+            <div a7></div>
+            <div b7></div>
+            <div c7></div>
+            <div d7></div>
+            <div e7></div>
+            <div f7></div>
+            <div g7></div>
+            <div h7></div>
+            <div i7></div>
+            <div j7></div>
+          </div>
+          <div row-eight>
+            <span>8</span>
+            <div a8></div>
+            <div b8></div>
+            <div c8></div>
+            <div d8></div>
+            <div e8></div>
+            <div f8></div>
+            <div g8></div>
+            <div h8></div>
+            <div i8></div>
+            <div j8></div>
+          </div>
+          <div row-nine>
+            <span>9</span>
+            <div a9></div>
+            <div b9></div>
+            <div c9></div>
+            <div d9></div>
+            <div e9></div>
+            <div f9></div>
+            <div g9></div>
+            <div h9></div>
+            <div i9></div>
+            <div j9></div>
+          </div>
+          <div row-ten>
+            <span>10</span>
+            <div a10></div>
+            <div b10></div>
+            <div c10></div>
+            <div d10></div>
+            <div e10></div>
+            <div f10></div>
+            <div g10></div>
+            <div h10></div>
+            <div i10></div>
+            <div j10></div>
+          </div>
+        </div>
+      </div>
+      <div class="menu">
+        Player One
+        <div instruction>
+          <button start-game>start game</button>
+        </div>
+      </div>
+    </div>
+    <div class="frame playerTwo" board-frame>
+      <div class="playScreen" player-base>
+        <div class="attack">
+          <span top>
+            <div></div>
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+            <div>E</div>
+            <div>F</div>
+            <div>G</div>
+            <div>H</div>
+            <div>I</div>
+            <div>J</div>
+          </span>
+          <div row-one>
+            <span>1</span>
+            <div a1></div>
+            <div b1></div>
+            <div c1></div>
+            <div d1></div>
+            <div e1></div>
+            <div f1></div>
+            <div g1></div>
+            <div h1></div>
+            <div i1></div>
+            <div j1></div>
+          </div>
+          <div row-two>
+            <span>2</span>
+            <div a2></div>
+            <div b2></div>
+            <div c2></div>
+            <div d2></div>
+            <div e2></div>
+            <div f2></div>
+            <div g2></div>
+            <div h2></div>
+            <div i2></div>
+            <div j2></div>
+          </div>
+          <div row-three>
+            <span>3</span>
+            <div a3></div>
+            <div b3></div>
+            <div c3></div>
+            <div d3></div>
+            <div e3></div>
+            <div f3></div>
+            <div g3></div>
+            <div h3></div>
+            <div i3></div>
+            <div j3></div>
+          </div>
+          <div row-four>
+            <span>4</span>
+            <div a4></div>
+            <div b4></div>
+            <div c4></div>
+            <div d4></div>
+            <div e4></div>
+            <div f4></div>
+            <div g4></div>
+            <div h4></div>
+            <div i4></div>
+            <div j4></div>
+          </div>
+          <div row-five>
+            <span>5</span>
+            <div a5></div>
+            <div b5></div>
+            <div c5></div>
+            <div d5></div>
+            <div e5></div>
+            <div f5></div>
+            <div g5></div>
+            <div h5></div>
+            <div i5></div>
+            <div j5></div>
+          </div>
+          <div row-six>
+            <span>6</span>
+            <div a6></div>
+            <div b6></div>
+            <div c6></div>
+            <div d6></div>
+            <div e6></div>
+            <div f6></div>
+            <div g6></div>
+            <div h6></div>
+            <div i6></div>
+            <div j6></div>
+          </div>
+          <div row-seven>
+            <span>7</span>
+            <div a7></div>
+            <div b7></div>
+            <div c7></div>
+            <div d7></div>
+            <div e7></div>
+            <div f7></div>
+            <div g7></div>
+            <div h7></div>
+            <div i7></div>
+            <div j7></div>
+          </div>
+          <div row-eight>
+            <span>8</span>
+            <div a8></div>
+            <div b8></div>
+            <div c8></div>
+            <div d8></div>
+            <div e8></div>
+            <div f8></div>
+            <div g8></div>
+            <div h8></div>
+            <div i8></div>
+            <div j8></div>
+          </div>
+          <div row-nine>
+            <span>9</span>
+            <div a9></div>
+            <div b9></div>
+            <div c9></div>
+            <div d9></div>
+            <div e9></div>
+            <div f9></div>
+            <div g9></div>
+            <div h9></div>
+            <div i9></div>
+            <div j9></div>
+          </div>
+          <div row-ten>
+            <span>10</span>
+            <div a10></div>
+            <div b10></div>
+            <div c10></div>
+            <div d10></div>
+            <div e10></div>
+            <div f10></div>
+            <div g10></div>
+            <div h10></div>
+            <div i10></div>
+            <div j10></div>
+          </div>
+        </div>
+        <div class="base" p-two-base>
+          <span top>
+            <div></div>
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+            <div>E</div>
+            <div>F</div>
+            <div>G</div>
+            <div>H</div>
+            <div>I</div>
+            <div>J</div>
+          </span>
+          <div row-one>
+            <span>1</span>
+            <div a1></div>
+            <div b1></div>
+            <div c1></div>
+            <div d1></div>
+            <div e1></div>
+            <div f1></div>
+            <div g1></div>
+            <div h1></div>
+            <div i1></div>
+            <div j1></div>
+          </div>
+          <div row-two>
+            <span>2</span>
+            <div a2></div>
+            <div b2></div>
+            <div c2></div>
+            <div d2></div>
+            <div e2></div>
+            <div f2></div>
+            <div g2></div>
+            <div h2></div>
+            <div i2></div>
+            <div j2></div>
+          </div>
+          <div row-three>
+            <span>3</span>
+            <div a3></div>
+            <div b3></div>
+            <div c3></div>
+            <div d3></div>
+            <div e3></div>
+            <div f3></div>
+            <div g3></div>
+            <div h3></div>
+            <div i3></div>
+            <div j3></div>
+          </div>
+          <div row-four>
+            <span>4</span>
+            <div a4></div>
+            <div b4></div>
+            <div c4></div>
+            <div d4></div>
+            <div e4></div>
+            <div f4></div>
+            <div g4></div>
+            <div h4></div>
+            <div i4></div>
+            <div j4></div>
+          </div>
+          <div row-five>
+            <span>5</span>
+            <div a5></div>
+            <div b5></div>
+            <div c5></div>
+            <div d5></div>
+            <div e5></div>
+            <div f5></div>
+            <div g5></div>
+            <div h5></div>
+            <div i5></div>
+            <div j5></div>
+          </div>
+          <div row-six>
+            <span>6</span>
+            <div a6></div>
+            <div b6></div>
+            <div c6></div>
+            <div d6></div>
+            <div e6></div>
+            <div f6></div>
+            <div g6></div>
+            <div h6></div>
+            <div i6></div>
+            <div j6></div>
+          </div>
+          <div row-seven>
+            <span>7</span>
+            <div a7></div>
+            <div b7></div>
+            <div c7></div>
+            <div d7></div>
+            <div e7></div>
+            <div f7></div>
+            <div g7></div>
+            <div h7></div>
+            <div i7></div>
+            <div j7></div>
+          </div>
+          <div row-eight>
+            <span>8</span>
+            <div a8></div>
+            <div b8></div>
+            <div c8></div>
+            <div d8></div>
+            <div e8></div>
+            <div f8></div>
+            <div g8></div>
+            <div h8></div>
+            <div i8></div>
+            <div j8></div>
+          </div>
+          <div row-nine>
+            <span>9</span>
+            <div a9></div>
+            <div b9></div>
+            <div c9></div>
+            <div d9></div>
+            <div e9></div>
+            <div f9></div>
+            <div g9></div>
+            <div h9></div>
+            <div i9></div>
+            <div j9></div>
+          </div>
+          <div row-ten>
+            <span>10</span>
+            <div a10></div>
+            <div b10></div>
+            <div c10></div>
+            <div d10></div>
+            <div e10></div>
+            <div f10></div>
+            <div g10></div>
+            <div h10></div>
+            <div i10></div>
+            <div j10></div>
+          </div>
+        </div>
+      </div>
+      <div class="menu">Player Two</div>
+    </div>
+  </body>
+</html>
