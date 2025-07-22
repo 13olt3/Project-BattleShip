@@ -104,29 +104,22 @@ export class Gameboard {
 }
 
 export class Player {
-  constructor() {
-    this.player;
+  constructor(user) {
+    //user determines of its Player one or Player two or computer(?)
+    this.player = user;
     this.board = new Gameboard();
   }
 
-  renderBoardOne() {
+  renderBoard() {
     for (let i = 0; i < this.board.occupiedCells.length; ++i) {
-      this.#changePlayerOneBoard(this.board.occupiedCells[i]);
+      this.#changeBoard(this.board.occupiedCells[i]);
     }
   }
-  #changePlayerOneBoard(cell) {
-    let selector = `[p-one-base] > div > [${cell}]`;
+  #changeBoard(cell) {
+    let selector = `[${this.player}-base] > div > [${cell}]`;
     const selectedCell = document.querySelector(selector);
     selectedCell.style.backgroundColor = "green";
   }
-  renderBoardTwo() {
-    for (let i = 0; i < this.board.occupiedCells.length; ++i) {
-      this.#changePlayerTwoBoard(this.board.occupiedCells[i]);
-    }
-  }
-  #changePlayerTwoBoard(cell) {
-    let selector = `[p-two-base] > div > [${cell}]`;
-    const selectedCell = document.querySelector(selector);
-    selectedCell.style.backgroundColor = "green";
-  }
+
+  pOneTurn() {}
 }
