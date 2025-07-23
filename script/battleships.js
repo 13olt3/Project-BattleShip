@@ -78,8 +78,7 @@ export class Gameboard {
     return fill;
   }
 
-  receiveAttack(xCoord, yCoord) {
-    let target = xCoord.concat(yCoord);
+  receiveAttack(target) {
     this.attackedCells.push(target);
     // maybe implement a missed attacks array
     let hit = false;
@@ -107,6 +106,7 @@ export class Player {
   constructor(user) {
     //user determines of its Player one or Player two or computer(?)
     this.player = user;
+
     this.board = new Gameboard();
   }
 

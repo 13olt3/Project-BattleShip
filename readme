@@ -4,3 +4,10 @@ set up the game board
 populate game board with ships
 
 dispaly both player's boards
+
+after ships have been placed
+shipps get rendered on the board
+
+turn on attack squares.
+
+game module runs the game using p1 and p2

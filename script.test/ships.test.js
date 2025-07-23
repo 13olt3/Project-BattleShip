@@ -51,5 +51,5 @@ test("receive attack miss", () => {
 test("receive attack hit", () => {
   let game = new Gameboard();
   game.placeShip("e", 5, "up");
-  expect(game.receiveAttack("e", 5)).toBe(true);
+  expect(game.receiveAttack("e5")).toBe(true);
 });

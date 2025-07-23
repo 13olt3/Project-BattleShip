@@ -38,6 +38,8 @@ body {
 .base > div > div,
 .attack > div > div {
   border: solid 2px black;
+  text-align: center;
+  font-size: 0.8em;
 }
 
 .menu {
