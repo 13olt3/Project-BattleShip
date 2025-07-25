@@ -6,7 +6,8 @@
     <title>Battleships</title>
   </head>
   <body>
-    <div class="frame playerOne" board-frame>
+    <div class="veil" veil></div>
+    <div class="frame playerOne" board-frame-one>
       <div class="playScreen" player-base>
         <div class="attack" p-one-attack>
           <span top>
@@ -301,14 +302,14 @@
       </div>
       <div class="menu">
         Player One
-        <div instruction>
+        <div start-instruction>
           <button start-game>start game</button>
         </div>
       </div>
     </div>
-    <div class="frame playerTwo" board-frame>
+    <div class="frame playerTwo" board-frame-two>
       <div class="playScreen" player-base>
-        <div class="attack">
+        <div class="attack" p-two-attack>
           <span top>
             <div></div>
             <div>A</div>
@@ -600,6 +601,12 @@
         </div>
       </div>
       <div class="menu">Player Two</div>
+    </div>
+    <div class="popup" popup>
+      <div class="instructionPopup" instruction-next>
+        Attack missed, player two turn
+      </div>
+      <button class="buttonPopup" popup-button>Continue</button>
     </div>
   </body>
 </html>

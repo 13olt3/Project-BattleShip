@@ -11,3 +11,14 @@ shipps get rendered on the board
 turn on attack squares.
 
 game module runs the game using p1 and p2
+
+
+
+make a pop up that shows outcome.
+
+
+click start button -> popup (palyer one turn)
+click popup -> popup vanishes
+click p1 attack square -> popup (hit/miss) p2 turn
+click popup -> popup vanishes , p2 board appears
+click p2 attack square -> popup (hit/miss) p1 turn
