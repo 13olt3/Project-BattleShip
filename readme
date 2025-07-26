@@ -1,3 +1,4 @@
+
 To do list:
 set up the game board
 
@@ -22,3 +23,5 @@ click popup -> popup vanishes
 click p1 attack square -> popup (hit/miss) p2 turn
 click popup -> popup vanishes , p2 board appears
 click p2 attack square -> popup (hit/miss) p1 turn
+
+need to check for all sunk
