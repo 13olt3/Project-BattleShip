@@ -27,28 +27,28 @@
             <td><img src="" alt="" katsu-sub /></td>
             <td>Katsu Sandwich</td>
             <td>4 squares</td>
-            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" select-katsu /></td>
           </tr>
           <tr>
             <td><img src="" alt="" weiner-sub /></td>
             <td>Weiner Sandwich</td>
             <td>3 squares</td>
-            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" select-weiner /></td>
           </tr>
           <tr>
             <td><img src="" alt="" burger /></td>
             <td>Burger</td>
             <td>2 squares</td>
-            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" select-burger /></td>
           </tr>
           <tr>
             <td><img src="" alt="" wrap /></td>
             <td>Wrap</td>
             <td>1 square</td>
-            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" select-wrap /></td>
           </tr>
         </table>
-        <button class="placeButton">Place your sandwiches</button>
+        <button class="placeButton" place-button>Place your sandwiches</button>
       </div>
     </div>
     <div class="veil" veil></div>
@@ -348,8 +348,9 @@
       <div class="menu">
         Player One
         <div start-instruction>
-          <button start-game>start game</button>
+          <div draggable>Place your subs</div>
         </div>
+        <button start-game>start game</button>
       </div>
     </div>
     <div class="frame playerTwo" board-frame-two>

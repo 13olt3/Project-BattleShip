@@ -124,12 +124,14 @@ body {
 .pve {
   margin-top: 40px;
   margin-bottom: 40px;
+  margin-left: 10px;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
 .pvp {
   margin-top: 40px;
   margin-bottom: 40px;
+  margin-right: 10px;
   grid-column: 1/ 2;
   grid-row: 2 / 3;
 }
@@ -165,4 +167,8 @@ td > img {
 }
 .placeButton {
   align-self: center;
+}
+
+.draggable {
+  cursor: move;
 }

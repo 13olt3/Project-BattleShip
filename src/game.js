@@ -8,21 +8,163 @@ export class Game {
 
   startGamePve() {
     const hardVeil = document.querySelector("[hardVeil]");
+    hardVeil.style.zIndex = "0";
+    this.renderSubs();
+    this.subsChosen();
+  }
+  startGamePvp() {
+    const hardVeil = document.querySelector("[hardVeil]");
+
+    hardVeil.style.zIndex = "0";
+    this.renderSubs();
+    this.subsChosen();
+  }
+
+  subsChosen() {
+    const placeSubsButton = document.querySelector("[place-button]");
+    const gameSetup = document.querySelector("[game-setup]");
+    const katsu = document.querySelector("[select-katsu]");
+    const weiner = document.querySelector("[select-weiner]");
+    const burger = document.querySelector("[select-burger]");
+    const wrap = document.querySelector("[select-wrap]");
+    let selection = [];
+
+    placeSubsButton.addEventListener("click", () => {
+      if (
+        !katsu.checked &&
+        !weiner.checked &&
+        !burger.checked &&
+        !wrap.checked
+      ) {
+        //do the condition if something is checked.
+        console.log("nothing checked");
+      } else {
+        gameSetup.style.display = "none";
+        if (katsu.checked) {
+          selection.push(4);
+        }
+        if (weiner.checked) {
+          selection.push(3);
+        }
+        if (burger.checked) {
+          selection.push(2);
+        }
+        if (wrap.checked) {
+          selection.push(1);
+        }
+      }
+      this.positionSubs(selection);
+    });
+  }
+
+  positionSubs(selection) {
+    const dragContainer = document.querySelector("[draggable]");
+    let katsu = document.createElement("img");
+    let weiner = document.createElement("img");
+    let burg = document.createElement("img");
+    let smallWrap = document.createElement("img");
+    if (selection.includes(4)) {
+      katsu.src = wholeKatsu;
+      katsu.style.height = "20px";
+      katsu.setAttribute("draggable", "true");
+      katsu.setAttribute("size", "4");
+      katsu.classList.add("draggable");
+      dragContainer.appendChild(katsu);
+    }
+    if (selection.includes(3)) {
+      weiner.src = weinerSub;
+      weiner.style.height = "20px";
+      weiner.setAttribute("draggable", "true");
+      weiner.setAttribute("size", "3");
+      weiner.classList.add("draggable");
+      dragContainer.appendChild(weiner);
+    }
+    if (selection.includes(2)) {
+      burg.src = burger;
+      burg.style.height = "20px";
+      burg.setAttribute("draggable", "true");
+      burg.setAttribute("size", "2");
+      burg.classList.add("draggable");
+      dragContainer.appendChild(burg);
+    }
+    if (selection.includes(1)) {
+      smallWrap.src = wrap;
+      smallWrap.style.height = "20px";
+      smallWrap.setAttribute("draggable", "true");
+      smallWrap.setAttribute("size", "1");
+      smallWrap.classList.add("draggable");
+      dragContainer.appendChild(smallWrap);
+    }
+
+    this.dragOver();
+  }
+
+  dragOver() {
+    const draggables = document.querySelectorAll(".draggable");
+    let subLength = "4";
+    let direction = "right";
+    draggables.forEach((draggable) => {
+      draggable.addEventListener("dragstart", (e) => {
+        subLength = e.target.attributes.size.value;
+        draggable.classList.add("dragging");
+      });
+
+      draggable.addEventListener("dragend", () => {
+        draggable.classList.remove("dragging");
+      });
+    });
+
+    const squares = document.querySelectorAll("[p-one-base]>div>div");
+    squares.forEach((square) => {
+      square.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        const draggable = document.querySelector(".dragging");
+        square.appendChild(draggable);
+      });
+    });
+    const dragSquare = document.querySelector("[draggable]");
+    dragSquare.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      const draggable = document.querySelector(".dragging");
+      dragSquare.appendChild(draggable);
+    });
+
+    squares.forEach((square) => {
+      square.addEventListener("mouseenter", (e) => {
+        // console.log(e.target.attributes[0].name);
+
+        e.target.style.backgroundColor = this.checkSpace(
+          e.target.attributes[0].name,
+          subLength,
+          direction
+        );
+      });
+      square.addEventListener("mouseleave", (e) => {
+        e.target.style.backgroundColor = "";
+      });
+    });
+  }
+
+  checkSpace(tile, length, direction) {
+    if ((direction = "right")) {
+      if (tile.charCodeAt(0) + Number(length) > 107) {
+        return "red";
+      } else return "green";
+    }
+  }
+
+  renderSubs() {
     const katsu4 = document.querySelector("[katsu-sub]");
     const burger2 = document.querySelector("[burger]");
     const weiner3 = document.querySelector("[weiner-sub]");
     const wrap1 = document.querySelector("[wrap]");
 
-    hardVeil.style.zIndex = 0;
     katsu4.src = wholeKatsu;
     burger2.src = burger;
     weiner3.src = weinerSub;
     wrap1.src = wrap;
   }
-  startGamePvp() {
-    const hardVeil = document.querySelector("[hardVeil]");
-    hardVeil.style.zIndex = 0;
-  }
+
   startGame() {
     let playerOne = new Player("p-one");
     playerOne.board.placeShip("b", 2, "down", 3);
