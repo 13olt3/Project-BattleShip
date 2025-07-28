@@ -25,3 +25,9 @@ click popup -> popup vanishes , p2 board appears
 click p2 attack square -> popup (hit/miss) p1 turn
 
 need to check for all sunk
+
+
+choose subs -> player one place subs -> player two place subs (or computer place subs)
+
+
+<img src="<%= require('./images/wrap1.jpg') %>" alt="" />

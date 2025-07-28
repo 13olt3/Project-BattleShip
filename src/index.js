@@ -1,19 +1,24 @@
 import { Game } from "./game";
 import "./styles.css";
-const startGame = document.querySelector("[start-game]");
-const pvp = document.querySelector("[pvp]");
-const pve = document.querySelector("[pve]");
 
-pvp.addEventListener("click", () => {
-  let game = new Game();
-  game.startGamePvp();
+const gameStart = document.querySelectorAll("[game-screen-one] > button");
+gameStart.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    //chooses pve or pvp game mode
+    let game = new Game(e.target.innerText);
+    game.chooseLoadout();
+  });
 });
-pve.addEventListener("click", () => {
-  let game = new Game();
-  game.startGamePve();
-});
+// pvp.addEventListener("click", () => {
+//   let game = new Game();
+//   game.startGamePvp();
+// });
+// pve.addEventListener("click", () => {
+//   let game = new Game();
+//   game.startGamePve();
+// });
 
-startGame.addEventListener("click", () => {
-  let game = new Game();
-  game.startGame();
-});
+// startGame.addEventListener("click", () => {
+//   let game = new Game();
+//   game.startGame();
+// });
