@@ -1,3 +1,5 @@
+import { wholeKatsu, weinerSub, burger, wrap, katsu1of4 } from "./images/index";
+
 export class Game {
   constructor(gameType) {
     this.gameType = gameType;
@@ -10,6 +12,7 @@ export class Game {
 
     const secondScreen = document.querySelector("[choose-loadout]");
     secondScreen.classList.remove("hidden");
+    this.#renderSubs();
 
     const katsu = document.querySelector("[select-katsu]");
     const weiner = document.querySelector("[select-weiner]");
@@ -41,9 +44,22 @@ export class Game {
         if (wrap.checked) {
           selection.push(1);
         }
+
+        //activates 3rd game screen
         this.placeSubs(selection);
       }
     });
+  }
+
+  #renderSubs() {
+    const chooseKatsu = document.querySelector("[katsu-sub]");
+    const chooseWeiner = document.querySelector("[weiner-sub]");
+    const chooseBurger = document.querySelector("[burger]");
+    const chooseWrap = document.querySelector("[wrap]");
+    chooseKatsu.src = wholeKatsu;
+    chooseWeiner.src = weinerSub;
+    chooseBurger.src = burger;
+    chooseWrap.src = wrap;
   }
 
   placeSubs(chosenSubs) {
@@ -52,6 +68,83 @@ export class Game {
 
     const thirdScreen = document.querySelector("[place-subs]");
     thirdScreen.classList.remove("hidden");
+
+    this.#createSub(chosenSubs);
+
+    const subsImg = document.querySelectorAll(".draggable");
+    subsImg.forEach((img) => {
+      img.addEventListener("dragstart", (e) => {
+        img.classList.add("dragging");
+      });
+      img.addEventListener("dragend", (e) => {
+        img.classList.remove("dragging");
+      });
+    });
+
+    const subBase = document.querySelector("[selected-subs]");
+    subBase.addEventListener("dragover", () => {
+      const draggable = document.querySelector(".dragging");
+      subBase.appendChild(draggable);
+    });
+
+    const squares = document.querySelectorAll("[game-board] > div");
+    squares.forEach((square) => {
+      square.addEventListener("dragover", () => {
+        const draggable = document.querySelector(".dragging");
+        square.appendChild(draggable);
+      });
+    });
+
+    const rotateSubs = document.querySelector("[rotate-subs]");
+    rotateSubs.addEventListener("click", () => {
+      const subs = document.querySelectorAll("[selected-subs] > img");
+      if (rotateSubs.value === "off") {
+        subs.forEach((image) => {
+          image.classList.add("rotate");
+        });
+        rotateSubs.setAttribute("value", "on");
+      } else if (rotateSubs.value === "on") {
+        subs.forEach((image) => {
+          image.classList.remove("rotate");
+        });
+        rotateSubs.setAttribute("value", "off");
+      }
+    });
+  }
+
+  #createSub(subArray) {
+    const selectedSubs = document.querySelector("[selected-subs]");
+    console.log(subArray);
+    console.log(subArray.includes(2));
+
+    if (subArray.includes(4)) {
+      let subImage = document.createElement("img");
+      subImage.classList.add("draggable");
+      subImage.setAttribute("draggable", "true");
+      subImage.src = wholeKatsu;
+      selectedSubs.appendChild(subImage);
+    }
+    if (subArray.includes(3)) {
+      let subImage = document.createElement("img");
+      subImage.classList.add("draggable");
+      subImage.setAttribute("draggable", "true");
+      subImage.src = weinerSub;
+      selectedSubs.appendChild(subImage);
+    }
+    if (subArray.includes(2)) {
+      let subImage = document.createElement("img");
+      subImage.classList.add("draggable");
+      subImage.setAttribute("draggable", "true");
+      subImage.src = burger;
+      selectedSubs.appendChild(subImage);
+    }
+    if (subArray.includes(1)) {
+      let subImage = document.createElement("img");
+      subImage.classList.add("draggable");
+      subImage.setAttribute("draggable", "true");
+      subImage.src = wrap;
+      selectedSubs.appendChild(subImage);
+    }
   }
 }
 

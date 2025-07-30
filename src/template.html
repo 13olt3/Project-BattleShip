@@ -23,11 +23,7 @@
         </tr>
         <tr>
           <td>
-            <img
-              src="<%= require('./images/katsuSub4.jpg') %>"
-              alt=""
-              katsu-sub
-            />
+            <img src="" alt="" katsu-sub />
           </td>
           <td>Katsu Sandwich</td>
           <td>4 squares</td>
@@ -35,11 +31,7 @@
         </tr>
         <tr>
           <td>
-            <img
-              src="<%= require('./images/weinerSub3.jpg') %>"
-              alt=""
-              weiner-sub
-            />
+            <img src="" alt="" weiner-sub />
           </td>
           <td>Weiner Sandwich</td>
           <td>3 squares</td>
@@ -47,7 +39,7 @@
         </tr>
         <tr>
           <td>
-            <img src="<%= require('./images/burger2.jpg') %>" alt="" burger />
+            <img src="" alt="" burger />
           </td>
           <td>Burger</td>
           <td>2 squares</td>
@@ -55,7 +47,7 @@
         </tr>
         <tr>
           <td>
-            <img src="<%= require('./images/wrap1.jpg') %>" alt="" wrap />
+            <img src="" alt="" wrap />
           </td>
           <td>Wrap</td>
           <td>1 square</td>
@@ -67,118 +59,158 @@
     </div>
     <div class="hidden gameScreenThree" place-subs>
       <div class="screenThreeTitle">Place your subs</div>
-      <div class="gameBoard">
-        <div a1>A1</div>
-        <div a2>A2</div>
-        <div a3>A3</div>
-        <div a4>A4</div>
-        <div a5>A5</div>
-        <div a6>A6</div>
-        <div a7>A7</div>
-        <div a8>A8</div>
-        <div a9>A9</div>
-        <div a10>A10</div>
+      <div class="gameBoard" game-board>
+        <!-- Top-left empty corner -->
+        <div label></div>
 
-        <div b1>B1</div>
-        <div b2>B2</div>
-        <div b3>B3</div>
-        <div b4>B4</div>
-        <div b5>B5</div>
-        <div b6>B6</div>
-        <div b7>B7</div>
-        <div b8>B8</div>
-        <div b9>B9</div>
-        <div b10>B10</div>
+        <!-- Column labels -->
+        <div label>1</div>
+        <div label>2</div>
+        <div label>3</div>
+        <div label>4</div>
+        <div label>5</div>
+        <div label>6</div>
+        <div label>7</div>
+        <div label>8</div>
+        <div label>9</div>
+        <div label>10</div>
 
-        <div c1>C1</div>
-        <div c2>C2</div>
-        <div c3>C3</div>
-        <div c4>C4</div>
-        <div c5>C5</div>
-        <div c6>C6</div>
-        <div c7>C7</div>
-        <div c8>C8</div>
-        <div c9>C9</div>
-        <div c10>C10</div>
+        <!-- Row A -->
+        <div label>A</div>
+        <div A1></div>
+        <div A2></div>
+        <div A3></div>
+        <div A4></div>
+        <div A5></div>
+        <div A6></div>
+        <div A7></div>
+        <div A8></div>
+        <div A9></div>
+        <div A10></div>
 
-        <div d1>D1</div>
-        <div d2>D2</div>
-        <div d3>D3</div>
-        <div d4>D4</div>
-        <div d5>D5</div>
-        <div d6>D6</div>
-        <div d7>D7</div>
-        <div d8>D8</div>
-        <div d9>D9</div>
-        <div d10>D10</div>
+        <!-- Row B -->
+        <div label>B</div>
+        <div B1></div>
+        <div B2></div>
+        <div B3></div>
+        <div B4></div>
+        <div B5></div>
+        <div B6></div>
+        <div B7></div>
+        <div B8></div>
+        <div B9></div>
+        <div B10></div>
 
-        <div e1>E1</div>
-        <div e2>E2</div>
-        <div e3>E3</div>
-        <div e4>E4</div>
-        <div e5>E5</div>
-        <div e6>E6</div>
-        <div e7>E7</div>
-        <div e8>E8</div>
-        <div e9>E9</div>
-        <div e10>E10</div>
+        <!-- Row C -->
+        <div label>C</div>
+        <div C1></div>
+        <div C2></div>
+        <div C3></div>
+        <div C4></div>
+        <div C5></div>
+        <div C6></div>
+        <div C7></div>
+        <div C8></div>
+        <div C9></div>
+        <div C10></div>
 
-        <div f1>F1</div>
-        <div f2>F2</div>
-        <div f3>F3</div>
-        <div f4>F4</div>
-        <div f5>F5</div>
-        <div f6>F6</div>
-        <div f7>F7</div>
-        <div f8>F8</div>
-        <div f9>F9</div>
-        <div f10>F10</div>
+        <!-- Row D -->
+        <div label>D</div>
+        <div D1></div>
+        <div D2></div>
+        <div D3></div>
+        <div D4></div>
+        <div D5></div>
+        <div D6></div>
+        <div D7></div>
+        <div D8></div>
+        <div D9></div>
+        <div D10></div>
 
-        <div g1>G1</div>
-        <div g2>G2</div>
-        <div g3>G3</div>
-        <div g4>G4</div>
-        <div g5>G5</div>
-        <div g6>G6</div>
-        <div g7>G7</div>
-        <div g8>G8</div>
-        <div g9>G9</div>
-        <div g10>G10</div>
+        <!-- Row E -->
+        <div label>E</div>
+        <div E1></div>
+        <div E2></div>
+        <div E3></div>
+        <div E4></div>
+        <div E5></div>
+        <div E6></div>
+        <div E7></div>
+        <div E8></div>
+        <div E9></div>
+        <div E10></div>
 
-        <div h1>H1</div>
-        <div h2>H2</div>
-        <div h3>H3</div>
-        <div h4>H4</div>
-        <div h5>H5</div>
-        <div h6>H6</div>
-        <div h7>H7</div>
-        <div h8>H8</div>
-        <div h9>H9</div>
-        <div h10>H10</div>
+        <!-- Row F -->
+        <div label>F</div>
+        <div F1></div>
+        <div F2></div>
+        <div F3></div>
+        <div F4></div>
+        <div F5></div>
+        <div F6></div>
+        <div F7></div>
+        <div F8></div>
+        <div F9></div>
+        <div F10></div>
 
-        <div i1>I1</div>
-        <div i2>I2</div>
-        <div i3>I3</div>
-        <div i4>I4</div>
-        <div i5>I5</div>
-        <div i6>I6</div>
-        <div i7>I7</div>
-        <div i8>I8</div>
-        <div i9>I9</div>
-        <div i10>I10</div>
+        <!-- Row G -->
+        <div label>G</div>
+        <div G1></div>
+        <div G2></div>
+        <div G3></div>
+        <div G4></div>
+        <div G5></div>
+        <div G6></div>
+        <div G7></div>
+        <div G8></div>
+        <div G9></div>
+        <div G10></div>
 
-        <div j1>J1</div>
-        <div j2>J2</div>
-        <div j3>J3</div>
-        <div j4>J4</div>
-        <div j5>J5</div>
-        <div j6>J6</div>
-        <div j7>J7</div>
-        <div j8>J8</div>
-        <div j9>J9</div>
-        <div j10>J10</div>
+        <!-- Row H -->
+        <div label>H</div>
+        <div H1></div>
+        <div H2></div>
+        <div H3></div>
+        <div H4></div>
+        <div H5></div>
+        <div H6></div>
+        <div H7></div>
+        <div H8></div>
+        <div H9></div>
+        <div H10></div>
+
+        <!-- Row I -->
+        <div label>I</div>
+        <div I1></div>
+        <div I2></div>
+        <div I3></div>
+        <div I4></div>
+        <div I5></div>
+        <div I6></div>
+        <div I7></div>
+        <div I8></div>
+        <div I9></div>
+        <div I10></div>
+
+        <!-- Row J -->
+        <div label>J</div>
+        <div J1></div>
+        <div J2></div>
+        <div J3></div>
+        <div J4></div>
+        <div J5></div>
+        <div J6></div>
+        <div J7></div>
+        <div J8></div>
+        <div J9></div>
+        <div J10></div>
       </div>
-      <div></div>
+      <div class="subSelection" selected-subs>
+        <div>Selected Subs</div>
+        <button class="rotateButton" value="off" rotate-subs>
+          rotate subs
+        </button>
+      </div>
     </div>
 
     <!-- <div class="hardVeil" hardVeil>
